@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Alege Categoria</h2>
+<br />
+
+@foreach (var cat in ViewBag.Categories)
+{
+    @Html.Label("Name", "Categorie")
+    <p>@cat.Name</p>
+    <a class="btn btn-success" href="/Categories/Show/@cat.CategoryId">Vezi categorie</a>
+    if (ViewBag.isAdmin)
+    {
+        <a class="btn btn-success" href="/Categories/Edit/@cat.CategoryId">Editeaza categorie</a>
+    }
+
+    <br />
+    <hr />
+    <br />
+
+}
+<br />
+@if (ViewBag.isAdmin)
+ {
+   <a class="btn btn-primary" href="/Categories/New">Adauga categorie</a>
+ }

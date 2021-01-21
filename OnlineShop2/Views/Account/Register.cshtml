@@ -1,0 +1,68 @@
+﻿@model OnlineShop2.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<style>
+    .title {
+        font-family: Georgia, serif;
+        text-align: center;
+    }
+    .subtitle {
+        font-family: Georgia, serif;
+        text-align: center;
+    }
+    .form
+    {
+        align-content:center;
+        margin-left:25%;
+    }
+    .button {
+        background: #3985e0;
+        background: -webkit-linear-gradient(left,#4a60c1 10%,#3985e0);
+        background: linear-gradient(to right,#4a60c1 10%,#3985e0);
+        color: aliceblue;
+        border-width: 0;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-left:30%;
+    }
+</style>
+<h2 class="title">@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4 class="subtitle">Create a new account.</h4>
+    <hr />
+    <div class="form">
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            </div>
+            <input type="submit" class="button" value="Register" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

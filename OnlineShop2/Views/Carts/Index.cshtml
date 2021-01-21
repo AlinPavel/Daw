@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@if (ViewBag.ProductsCount != 0)
+{
+    foreach (var product in ViewBag.Products)
+    {
+        <br />
+        <div class="panel panel-default">
+            <div class="panel-heading">
+
+                <i class="glyphicon glyphicon-user"></i>
+                <i> @product.User.UserName </i>
+
+            </div>
+
+            <div class="panel-body">
+                <br /><strong>@product.Name</strong>
+                <br />
+                <span class="label label-success">@product.Date</span>
+                <span class="label label-success">@product.Price lei</span>
+                <br />
+                <br />
+
+                <div class="panel-footer">
+                    <a class="glyphicon glyphicon-comment" href="/Products/Show/@product.ProductId">Vezi produsul</a>
+                </div>
+            </div>
+        </div>
+        <img src="~/Content/giphy.gif" alt="Cart">
+
+    }
+}

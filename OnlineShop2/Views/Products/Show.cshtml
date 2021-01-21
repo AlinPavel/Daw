@@ -1,0 +1,105 @@
+﻿@model OnlineShop.Models.Product
+<h1>@ViewBag.Message</h1>
+@{
+    ViewBag.Title = "Show";
+}
+<h2>Show</h2>
+<br />
+<button class="btn btn-primary" style="background-color: #5680E9" onclick="window.location.href='/Products/Index'">Inapoi la produse</button>
+<br />
+<br />
+
+<div class="panel panel-default">
+    <div class="panel-heading"><strong>@ViewBag.Product.User.UserName</strong></div>
+    <div class="panel-body">
+        <br /><strong>@ViewBag.Product.Description</strong>
+        <br /><br />
+        <span class="label label-success">@Model.Date</span>
+        @foreach (var cat in Model.Categories)
+        {
+            <i class="glyphicon glyphicon-globe"></i> @cat.Name
+        }
+        <hr />
+        <br />
+        @if (ViewBag.isAdmin || ViewBag.isProductOwner)
+        {
+            <a class="btn btn-success pull-left" href="/Products/Edit/@ViewBag.Product.ProductId">Modifica produs</a>
+
+            <form method="post" action="/Products/Delete/@ViewBag.Product.ProductId">
+                @Html.HttpMethodOverride(HttpVerbs.Delete)
+                <button class="btn btn-danger pull-right" type="submit">
+                    Sterge
+                    produs
+                </button>
+            </form>
+        }
+    </div>
+</div>
+
+
+
+@foreach (var rev in ViewBag.Product.Reviews)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div>
+                    <strong>@rev.User.UserName</strong>
+                    <hr />
+                    <p>@rev.Content</p>
+                    <small class="pull-right">@rev.Date</small>
+                </div>
+
+                @if (ViewBag.isProductOwner || rev.UserId == ViewBag.UserId || ViewBag.isAdmin)
+                {
+                    <div style="display: inline-block; float : left ; margin-right: 15px">
+                        <form method="post" action="/Reviews/Delete/@rev.ReviewId">
+                            @Html.HttpMethodOverride(HttpVerbs.Delete)
+                            <button class="glyphicon glyphicon-trash" style="border: none; background: transparent" type="submit"></button>
+                        </form>
+                    </div>
+                }
+
+                @if (rev.UserId == ViewBag.UserId || ViewBag.isAdmin)
+                {
+                    <div style="display: inline-block; float : left">
+                        <a class="glyphicon glyphicon-pencil" href="/Reviews/Edit/@rev.ReviewId"></a>
+                    </div>
+
+                }
+
+
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <hr />
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <div class="panel">
+                @using (Html.BeginForm(actionName: "New", controllerName: "Reviews"))
+                {
+                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                    <input type="hidden" name="ProductId" value="@ViewBag.Product.ProductId" />
+                    @Html.Label("Content", "Review")
+                    <br />
+                    @Html.TextArea("Content", null, new { @class = "form=control" })
+                    <br />
+                    @Html.ValidationMessage("Content", null, new { @class = "text-danger" })
+                    <button class="btn btn-success " type="submit">
+                        Adauga
+                        review
+                    </button>
+                }
+
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

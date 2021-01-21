@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<address>
+    Splaiul Independentei<br />
+    Nr 445<br />
+    <abbr title="Phone">P:</abbr>
+    425.555.0100
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
+
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+    <div ng-app="" ng-init="letter=''">
+
+        <p>Input a review:</p>
+        <p>Your review: <input type="text" ng-model="letter"></p>
+        <p>You wrote: {{ letter.length }}</p>
+        <button type="button" mdbBtn color="dark" mdbWavesEffect>Send</button>
+
+    </div>
+
+</body>
+</html>

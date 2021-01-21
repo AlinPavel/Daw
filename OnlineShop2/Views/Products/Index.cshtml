@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<h1>@ViewBag.Message</h1>
+
+<br />
+
+<style>
+    .pret {
+        margin-top: 10px;
+        margin-left:75%;
+        text-align: right;
+        white-space: nowrap;
+        font-size: 16.5px;
+        line-height: 1.25;
+        font-style: normal;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .date {
+        font-size: 12px;
+        font-weight: 400;
+        color: #406367;
+        line-height: 1;
+        display: inline-block;
+        margin-top: 0;
+    }
+    .title {
+        font-family: Georgia, serif;
+        text-align: center;
+    }
+    .button {
+        background: #3985e0;
+        background: -webkit-linear-gradient(left,#4a60c1 10%,#3985e0);
+        background: linear-gradient(to right,#4a60c1 10%,#3985e0);
+        color:aliceblue;
+        border-width: 0;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        display:flex;
+        justify-content:right;
+    }
+    .flex {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+
+<h1 class="title">Produse</h1>
+
+<a class="btn btn-primary pull-left" style="background-color: #5680E9; margin-left:89%" href="/Products/New">Adauga produs</a>
+<br />
+
+<hr />
+
+@foreach (var product in ViewBag.Products)
+{
+    <br />
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="flex">
+
+            <i class="glyphicon glyphicon-user"></i>
+            <i> @product.User.UserName </i>
+            <form method="post" action="/Products/AddToCart">
+                <button type="submit" class="btn btn-success">Adauga in cos</button>
+
+                <input type="hidden" name="ProductId" value="@product.ProductId" />
+
+            </form>                </div>
+        </div>
+
+        <div class="panel-body">
+            <br /><strong>@product.Name</strong>
+            <br />
+            <span class="date">Data publicarii: @product.Date</span>
+            <span class="pret">@product.Price lei</span>
+            <br />
+            <br />
+
+            <div class="panel-footer">
+                <a class="glyphicon glyphicon-comment" href="/Products/Show/@product.ProductId"> Vezi produsul</a>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,17 @@
+﻿@model OnlineShop.Models.Category
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form method="post" action="/Categories/Edit/@Model.CategoryId">
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+    @Html.Label("Name", "Nume")
+    <br />
+    @Html.Editor("Name")
+    @Html.ValidationMessage("Name", null, new { @class = "text-danger" })
+    <br /><br />
+    <button class="btn btn-success " type="submit">Editeaza</button>
+</form>
+

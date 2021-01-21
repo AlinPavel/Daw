@@ -1,0 +1,163 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>CheeseShop</h1>
+    <p class="lead">
+        Magazinul de brânzeturi este cel mai recunoscut din România datorită calității produselor și a prețului avantajos
+    </p>
+
+</div>
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2></h2>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="~/Content/cheese2.jpg" alt="" style="width:100%;">
+                </div>
+
+                <div class="item">
+                    <img src="~/Content/cheese.jpg" alt="" style="width:100%;">
+                </div>
+
+                <div class="item">
+                    <img src="~/Content/cheese3.jpg" alt="" style="width:100%;">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="w3-container w3-padding-32" id="projects">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Cele mai vizionate produse</h3>
+    </div>
+
+    <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Branza din Sibiu</div>
+                <img src="https://www.exquis.ro/wp-content/uploads/2017/05/cum-iti-dai-seama-daca-ai-cumparat-branza-falsa-374640-1024x550.jpg" alt="House" style="width:100%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Cas de la fermele din Brasov</div>
+                <img src="https://branzacinstita.ro/wp-content/uploads/2015/10/18_Casdinlaptedevaca2-820x385.jpg" alt="House" style="width:100%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Lapte Dorna</div>
+                <img src="https://deliveryman.ro/2095-large_default/lapte-ladorna-uht-15-grasime-1-litru.jpg" alt="House" style="width:100%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Branza Cheddar Maturata</div>
+                <img src="https://atlas-geografic.net/wp-content/uploads/2020/06/branza-cheddar-77.jpg" alt="House" style="width:100%">
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Parmezan Sicilian</div>
+                <img src="https://2.bp.blogspot.com/-yNom9gWoYhA/UhuC4EcJePI/AAAAAAAAo2w/1Lq6f_4bI2w/s640/parmigiano_forma_e_trancio.jpg" alt="House" style="width:99%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Branza Valea Prahovei</div>
+                <img src="https://frankfurt.apollo.olxcdn.com/v1/files/93urwtaew6x83-RO/image;s=644x461" alt="House" style="width:99%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Lapte natural Covasna</div>
+                <img src="https://www.bizbrasov.ro/wp-content/uploads/2014/01/lapte-1363017006.jpg" alt="House" style="width:99%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Smantana Bucovina</div>
+                <img src="https://www.auchan.ro/public/images/h46/hde/h00/smantana-bucovina-200-g-8863270043678.jpg" alt="House" style="width:99%">
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="w3-container w3-padding-32" id="about">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Despre noi</h3>
+        <p>
+            Primul site din Romania dedicat producatorilor de lactate(branzeturi,smantana,lapte, produse ce contin lactate), unde acestia isi pot incarca gratuit produsele pentru piata interna, dar si un site care isi incarca propriile produse.
+            Valabilitatea produselor si calitatea acestora sunt testate de catre administratorii paginii.
+        </p>
+    </div>
+
+    <div class="w3-row-padding w3-grayscale">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <img src="https://media-exp1.licdn.com/dms/image/C4E03AQG7fAnh188dvw/profile-displayphoto-shrink_200_200/0/1604409958144?e=1613001600&v=beta&t=Ih16cWhFiVT35Y-11C3qYkC2JAXYAPXzKJMD8Mh9tS0" alt="John" style="width:200px ; height:200px">
+            <h3>Alin Pavel</h3>
+            <p class="w3-opacity">Administrator Site</p>
+            <p>Am inceput acest business pentru a ajuta producatorii locali si am ajuns sa ma bucur si eu de el, facandu-mi cumparaturi pe propriul site</p>
+           
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <img src="https://image.stirileprotv.ro/media/images/680xX/Jan2014/61450853.jpg" alt="Jane" style="width:200px ; height:200px">
+            <h3>Ghita Ciobanul</h3>
+            <p class="w3-opacity">Producator local</p>
+            <p>Cel mai bun site de vanzare.Recomand pentru seriozitate si pentru sprijinul acordat noua, producatorilor.No, bine!</p>
+            
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <img src="https://cdn.knd.ro/media/521/2861/551/20005294/1/tanti-maria.jpg?width=1200&height=630" alt="Mike" style="width:200px ; height:200px">
+            <h3>Tanti Maria</h3>
+            <p class="w3-opacity">Producator local</p>
+            <p>Reusesc sa imi vand mult mai usor produsele(laptele si smantana) si totul este gratuit</p>
+            
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <img src="https://www.bdo.ro/getmedia/9bfaef9b-e383-4a24-ae0d-7058e66e62e6/4E4A6554_pp_1.jpg.aspx?width=1920&height=1280&ext=.jpg" alt="Dan" style="width:200px ; height:200px">
+            <h3>Dan</h3>
+            <p class="w3-opacity">Producator international</p>
+            <p>Salut, numele meu este Dan si detin o mini ferma unde producem cel mai bun parmezan sicilian si am reusit sa ajungem si pe piata din Romania cu ajutorul acestui site, incredere 100%</p>
+           
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+</div>
+

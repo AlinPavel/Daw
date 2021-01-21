@@ -1,0 +1,37 @@
+﻿@model OnlineShop.Models.Product
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Editare produs</h2>
+
+<form method="post" action="/Products/Edit/@Model.ProductId">
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+
+    @Html.Hidden("ProductId")
+
+    @Html.Label("Name", "Nume produs")
+    <br />
+    @Html.TextBox("Name", null, new { @class = "form-control" })
+    @Html.ValidationMessage("Name", "", new { @class = "text-danger" })
+    <br />
+    <br />
+    @Html.Label("Description", "Descriere postare")
+    <br />
+    @Html.TextArea("Description", null, new { @class = "form-control" })
+    @Html.ValidationMessage("Description", "", new { @class = "text-danger" })
+    <br />
+    <br />
+    @Html.Label("Price", "Pret produs")
+    <br />
+    @Html.TextArea("Price", null, new { @class = "form-control" })
+    @Html.ValidationMessage("Price", "", new { @class = "text-danger" })
+    <br />
+    <br />
+    @Html.Label("SelectedCategories", "Selectati categoriile")
+    @Html.ListBox("SelectedCategories", new MultiSelectList(Model.Cat, "Value", "Text"), new { @class = "form-control" })
+    @Html.ValidationMessage("SelectedCategories", null, new { @class = "text-danger" })
+    <br />
+    <br />
+    <button class="btn btn-success" type="submit">Modifica produs</button>
+</form>
